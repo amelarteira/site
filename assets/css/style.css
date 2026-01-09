@@ -82,7 +82,8 @@ h3{font-size:20px;letter-spacing:.02em;}
   grid-column:span 6;background:var(--paper);
   border-radius:var(--radius);border:1px solid rgba(0,0,0,.06);overflow:hidden;
 }
-.card-media img{width:100%;aspect-ratio:1/1;object-fit:cover;} /* *Editor: foto principal 1:1 (ex.: 1200x1200) */
+.card-media{width:100%;}
+.card-media img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center;} /* *Editor: foto principal 1:1 (ex.: 1200x1200) */
 .card-body{padding:var(--s3);}
 .card-title{display:flex;align-items:baseline;justify-content:space-between;gap:14px;}
 .card-title h3{margin:0;}
@@ -181,7 +182,7 @@ nav a{white-space:nowrap;}
 
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr;gap:var(--s4);}
-  .card{grid-column:span 12;}
+  .card{grid-column:span 12;max-width:100%;margin:0 auto;}
   .process-grid{grid-template-columns:1fr;gap:var(--s4);}
   .form-row{grid-template-columns:1fr;}
   .brand img{width:150px;}
