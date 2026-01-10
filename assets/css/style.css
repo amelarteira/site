@@ -187,3 +187,8 @@ nav a{white-space:nowrap;}
   .form-row{grid-template-columns:1fr;}
   .brand img{width:150px;}
 }
+
+/* *Editor: deixa os valores do contato um pouco mais claros */
+.contact .contact-value{
+  color: #6b6b6b; /* ajuste aqui: mais claro = número maior */
+}
