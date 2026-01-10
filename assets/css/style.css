@@ -188,6 +188,23 @@ nav a{white-space:nowrap;}
   .brand img{width:150px;}
 }
 
+/* *Editor: impedir quebra do telefone no contato (mobile e web) */
+.contact .contact-value{
+  white-space: nowrap;      /* não quebra linha */
+  overflow-wrap: normal;    /* desfaz quebra agressiva */
+  word-break: normal;       /* desfaz quebra agressiva */
+}
+
+/* *Editor: dar mais espaço útil ao texto da área de contato no mobile */
+@media (max-width: 520px){
+  .contact .meta{
+    max-width: 100% !important;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+
 /* *Editor: deixa os valores do contato um pouco mais claros */
 .contact .contact-value{
   color: #6b6b6b; /* ajuste aqui: mais claro = número maior */
