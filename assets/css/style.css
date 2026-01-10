@@ -222,67 +222,52 @@ html, body{
 }
 
 /* =========================================================
-   *Editor: FIX — evitar corte com cards no mobile (somente bolsas)
-   (atua apenas em .card, .card-media e miniaturas)
+*Editor: Correção de corte/centralização APENAS nos cards (.card)
+- Não altera layout do resto do site
 ========================================================= */
 
-@media (max-width: 520px){
-
-  /* *Editor: o card nunca pode ultrapassar a largura da tela */
-  .card{
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;          /* impede qualquer vazamento pro lado */
-  }
-
-  /* *Editor: área da foto principal respeita o card */
-  .card-media{
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  /* *Editor: foto principal não vaza e não cria “sobras” */
-  .card-media img{
-    display: block;            /* remove espaços/bugs de inline-img */
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  /* *Editor: miniaturas — quebra em 2 linhas se faltar espaço */
-  .thumbs{
-    display: flex;
-    flex-wrap: wrap;           /* em vez de cortar, quebra linha */
-    gap: 10px;
-    max-width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  .thumb{
-    flex: 0 0 auto;
-  }
-
-  .thumb img{
-    display: block;
-    width: 64px;               /* *Editor: tamanho da miniatura */
-    height: 64px;
-    object-fit: cover;
-    object-position: center;
-    max-width: 100%;
-  }
+/* *Editor: garante que o card nunca “vaze” para fora da tela */
+.card{
+  max-width: 100%;
+  overflow: hidden; /* impede cortes/estouro para a direita */
 }
 
-@media (max-width: 520px){
-  .card-body{
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-wrap: anywhere;   /* evita palavras/valores estourarem */
-  }
+/* *Editor: garante que a mídia (foto) respeite o card */
+.card-media{
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
+/* *Editor: imagem principal do card sempre centralizada */
+.card-media img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;        /* mantém estética */
+  object-position: center;  /* evita “cortar só da direita” */
+}
+
+/* *Editor: miniaturas — evita cortar na direita e mantém alinhado */
+.thumbs{
+  max-width: 100%;
+  overflow-x: auto;                 /* se não couber, rola em vez de cortar */
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  gap: 12px;
+  padding-bottom: 6px;              /* dá respiro pro scroll */
+}
+
+/* *Editor: cada miniatura não encolhe de forma estranha */
+.thumb{
+  flex: 0 0 auto;
+}
+
+/* *Editor: imagem da miniatura sempre bem recortada */
+.thumb img{
+  display: block;
+  width: 72px;   /* ajuste aqui se quiser maior/menor */
+  height: 72px;  /* mantém 1:1 */
+  object-fit: cover;
+  object-position: center;
+}
