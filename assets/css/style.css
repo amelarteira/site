@@ -93,6 +93,10 @@ h3{font-size:20px;letter-spacing:.02em;}
   object-fit: cover;
   object-position: center;
 }
+/* *Editor: evita a imagem estourar o card */
+.card-media{
+  overflow: hidden;
+}
 
 .card-body{padding:var(--s3);}
 .card-title{display:flex;align-items:baseline;justify-content:space-between;gap:14px;}
