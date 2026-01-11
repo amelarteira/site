@@ -86,15 +86,23 @@ h3{font-size:20px;letter-spacing:.02em;}
 }
 .card-media{width:100%;}
 /* *Editor: foto principal 1:1 (ex.: 1200x1200) */
+/* *Editor: foto principal do card — reduz um pouco no mobile pra não estourar */
+.card-media{
+  display: flex;
+  justify-content: center;
+  padding: 12px; /* *Editor: aumenta/diminui a “margem” em volta da foto */
+}
+
 .card-media img{
-  display: block;        /* *Editor: evita “vazamento” na direita em alguns mobiles */
-  width: 100%;
-  max-width: 100%;       /* *Editor: cinto de segurança */
-  aspect-ratio: 1 / 1;
-  height: auto;          /* *Editor: ajuda alguns navegadores */
+  width: calc(100% - 24px); /* 100% menos o dobro do padding */
+  max-width: 520px;         /* *Editor: limite em telas grandes */
+  aspect-ratio: 1 / 1;      /* 1:1 */
   object-fit: cover;
   object-position: center;
+  border-radius: 16px;      /* opcional: mantém o estilo */
+  display: block;
 }
+
 /* *Editor: evita a imagem estourar o card */
 .card-media{
   overflow: hidden;
