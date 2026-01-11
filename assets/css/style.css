@@ -236,3 +236,9 @@ html, body{
   max-width: 100%;
   overflow-x: hidden;
 }
+/* *Editor: impede qualquer conteúdo do card de estourar para fora */
+.card{
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
