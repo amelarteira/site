@@ -220,3 +220,7 @@ html, body{
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* *Editor: DEBUG — mostra quem está causando overflow horizontal */
+* { outline: 1px solid rgba(255,0,0,.05); }
+html, body { overflow-x: hidden; }
