@@ -83,7 +83,17 @@ h3{font-size:20px;letter-spacing:.02em;}
   border-radius:var(--radius);border:1px solid rgba(0,0,0,.06);overflow:hidden;
 }
 .card-media{width:100%;}
-.card-media img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center;} /* *Editor: foto principal 1:1 (ex.: 1200x1200) */
+/* *Editor: foto principal 1:1 (ex.: 1200x1200) */
+.card-media img{
+  display: block;        /* *Editor: evita “vazamento” na direita em alguns mobiles */
+  width: 100%;
+  max-width: 100%;       /* *Editor: cinto de segurança */
+  aspect-ratio: 1 / 1;
+  height: auto;          /* *Editor: ajuda alguns navegadores */
+  object-fit: cover;
+  object-position: center;
+}
+
 .card-body{padding:var(--s3);}
 .card-title{display:flex;align-items:baseline;justify-content:space-between;gap:14px;}
 .card-title h3{margin:0;}
